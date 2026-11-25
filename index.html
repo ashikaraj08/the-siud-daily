@@ -7,81 +7,414 @@
 <meta name="theme-color" content="#eee5d2">
 <meta name="description" content="Ashika Raj — candidate for SIUD Student Council President 2026–27. The SIUD Daily: The Student Voice. The Student Choice.">
 <title>The SIUD Daily | Ashika Raj</title>
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Playfair+Display:wght@600;700;800;900&family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600;8..60,700&display=swap" rel="stylesheet">
 
 <style>
-:root{--paper:#eee5d2;--ink:#201d19;--muted:#6d6559;--red:#a92d27;--line:#8f8575;--white:#f8f3e9}
+:root{
+--paper:#eee5d2;
+--ink:#201d19;
+--muted:#6d6559;
+--red:#a92d27;
+--white:#f8f3e9;
+--line:#8f8575;
+}
+
 *{box-sizing:border-box}
+
 html{scroll-behavior:smooth}
-body{margin:0;background:#d5cbb8;color:var(--ink);font-family:"Source Serif 4",Georgia,serif}
-.page{width:min(1120px,calc(100% - 28px));margin:24px auto;background:var(--paper);padding:clamp(18px,4vw,48px);box-shadow:0 12px 45px #33271930;position:relative}
-.page:before{content:"";position:absolute;inset:0;pointer-events:none;opacity:.12;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.18'/%3E%3C/svg%3E")}
+
+body{
+margin:0;
+background:#d5cbb8;
+color:var(--ink);
+font-family:"Source Serif 4",Georgia,serif;
+}
+
+.page{
+width:min(1120px,calc(100% - 28px));
+margin:24px auto;
+background:var(--paper);
+padding:clamp(18px,4vw,48px);
+box-shadow:0 12px 45px #33271930;
+position:relative;
+}
+
+.page:before{
+content:"";
+position:absolute;
+inset:0;
+pointer-events:none;
+opacity:.12;
+background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.18'/%3E%3C/svg%3E");
+}
+
 header,.content,footer{position:relative}
-.topline,.meta,.kicker,.nav,.smallcaps{font-family:"DM Mono",monospace;text-transform:uppercase;letter-spacing:.09em}
-.topline{display:flex;justify-content:space-between;gap:12px;border-bottom:1px solid var(--ink);padding-bottom:9px;font-size:10px}
-.masthead{text-align:center;padding:16px 0 12px;border-bottom:4px double var(--ink)}
-.masthead h1{font:900 clamp(2.7rem,8vw,6.5rem)/.88 "Playfair Display",Georgia,serif;letter-spacing:-.055em;margin:0}
-.tagline{font:italic 600 clamp(13px,2vw,19px) "Source Serif 4",serif;margin:12px 0 3px}
-.edition{font:11px "DM Mono",monospace;letter-spacing:.18em;margin:8px 0 0}
-nav{display:flex;flex-wrap:wrap;justify-content:center;gap:8px 22px;padding:13px 0;border-bottom:1px solid var(--ink)}
-nav a{font:11px "DM Mono",monospace;text-transform:uppercase;letter-spacing:.08em;color:var(--ink);text-decoration:none}
-nav a:hover{color:var(--red);text-decoration:underline}
-.breaking{display:flex;align-items:center;gap:12px;border-bottom:1px solid var(--ink);padding:10px 0;font:11px "DM Mono",monospace}
-.breaking b{background:var(--red);color:var(--white);padding:5px 8px;letter-spacing:.1em}
-.hero{display:grid;grid-template-columns:1.25fr .75fr;gap:28px;padding:26px 0;border-bottom:3px double var(--ink);align-items:center}
-.hero h2{font:900 clamp(2.3rem,6vw,5.4rem)/.94 "Playfair Display",Georgia,serif;letter-spacing:-.045em;margin:8px 0 14px}
-.hero h2 em{color:var(--red);font-style:normal}
-.dek{font-size:clamp(17px,2vw,21px);line-height:1.4;max-width:650px}
-.byline{font:11px "DM Mono",monospace;text-transform:uppercase;letter-spacing:.08em;color:var(--muted)}
-.portrait-wrap{border:1px solid var(--ink);padding:7px;transform:rotate(1deg);background:var(--white);max-width:310px;margin:auto}
-.portrait-wrap img{display:block;width:100%;height:340px;object-fit:cover;object-position:center 28%;filter:grayscale(1) contrast(1.05)}
-.photo-caption{font:10px "DM Mono",monospace;text-align:center;padding:7px 2px 1px;text-transform:uppercase}
-.columns{display:grid;grid-template-columns:1fr 1fr 1fr;gap:22px;padding:24px 0;border-bottom:1px solid var(--ink)}
-.column{border-right:1px solid var(--line);padding-right:18px}
-.column:last-child{border:0;padding:0}
-h3{font:700 23px/1.05 "Playfair Display",serif;margin:7px 0 10px}
-p{line-height:1.58;margin:8px 0}
-.smallcaps{font-size:10px;color:var(--red);font-weight:500}
-.rule-title{display:flex;align-items:center;gap:12px;margin:26px 0 14px}
-.rule-title h2{font:800 clamp(26px,4vw,42px) "Playfair Display",serif;margin:0;white-space:nowrap}
-.rule-title:after{content:"";height:1px;background:var(--ink);flex:1}
-.intro{font-size:18px;max-width:850px}
-.promise-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:0 24px}
-.promise{padding:15px 0;border-top:1px solid var(--line)}
+
+.topline,.meta,.kicker,.nav,.smallcaps{
+font-family:"DM Mono",monospace;
+text-transform:uppercase;
+letter-spacing:.09em;
+}
+
+.topline{
+display:flex;
+justify-content:space-between;
+gap:12px;
+border-bottom:1px solid var(--ink);
+padding-bottom:9px;
+font-size:10px;
+}
+
+.masthead{
+text-align:center;
+padding:16px 0 12px;
+border-bottom:4px double var(--ink);
+}
+
+.masthead h1{
+font:900 clamp(2.7rem,8vw,6.5rem)/.88 "Playfair Display",Georgia,serif;
+letter-spacing:-.055em;
+margin:0;
+}
+
+.tagline{
+font:italic 600 clamp(13px,2vw,19px) "Source Serif 4",serif;
+margin:12px 0 3px;
+}
+
+.edition{
+font:11px "DM Mono",monospace;
+letter-spacing:.18em;
+margin:8px 0 0;
+}
+
+nav{
+display:flex;
+flex-wrap:wrap;
+justify-content:center;
+gap:8px 22px;
+padding:13px 0;
+border-bottom:1px solid var(--ink);
+}
+
+nav a{
+font:11px "DM Mono",monospace;
+text-transform:uppercase;
+letter-spacing:.08em;
+color:var(--ink);
+text-decoration:none;
+}
+
+nav a:hover{
+color:var(--red);
+text-decoration:underline;
+}
+
+.breaking{
+display:flex;
+align-items:center;
+gap:12px;
+border-bottom:1px solid var(--ink);
+padding:10px 0;
+font:11px "DM Mono",monospace;
+}
+
+.breaking b{
+background:var(--red);
+color:var(--white);
+padding:5px 8px;
+letter-spacing:.1em;
+}
+
+.hero{
+display:grid;
+grid-template-columns:1.25fr .75fr;
+gap:28px;
+padding:26px 0;
+border-bottom:3px double var(--ink);
+align-items:center;
+}
+
+.hero h2{
+font:900 clamp(2.3rem,6vw,5.4rem)/.94 "Playfair Display",Georgia,serif;
+letter-spacing:-.045em;
+margin:8px 0 14px;
+}
+
+.hero h2 em{
+color:var(--red);
+font-style:normal;
+}
+
+.dek{
+font-size:clamp(17px,2vw,21px);
+line-height:1.4;
+max-width:650px;
+}
+
+.byline{
+font:11px "DM Mono",monospace;
+text-transform:uppercase;
+letter-spacing:.08em;
+color:var(--muted);
+}
+
+.portrait-wrap{
+border:1px solid var(--ink);
+padding:7px;
+transform:rotate(1deg);
+background:var(--white);
+max-width:310px;
+margin:auto;
+}
+
+.portrait-wrap img{
+display:block;
+width:100%;
+height:340px;
+object-fit:cover;
+object-position:center 28%;
+filter:grayscale(1) contrast(1.05);
+}
+
+.photo-caption{
+font:10px "DM Mono",monospace;
+text-align:center;
+padding:7px 2px 1px;
+text-transform:uppercase;
+}
+
+.columns{
+display:grid;
+grid-template-columns:1fr 1fr 1fr;
+gap:22px;
+padding:24px 0;
+border-bottom:1px solid var(--ink);
+}
+
+.column{
+border-right:1px solid var(--line);
+padding-right:18px;
+}
+
+.column:last-child{
+border:0;
+padding:0;
+}
+
+h3{
+font:700 23px/1.05 "Playfair Display",serif;
+margin:7px 0 10px;
+}
+
+p{
+line-height:1.58;
+margin:8px 0;
+}
+
+.smallcaps{
+font-size:10px;
+color:var(--red);
+font-weight:500;
+}
+
+.rule-title{
+display:flex;
+align-items:center;
+gap:12px;
+margin:26px 0 14px;
+}
+
+.rule-title h2{
+font:800 clamp(26px,4vw,42px) "Playfair Display",serif;
+margin:0;
+white-space:nowrap;
+}
+
+.rule-title:after{
+content:"";
+height:1px;
+background:var(--ink);
+flex:1;
+}
+
+.intro{
+font-size:18px;
+max-width:850px;
+}
+
+.promise-grid{
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:0 24px;
+}
+
+.promise{
+padding:15px 0;
+border-top:1px solid var(--line);
+}
+
 .promise h3{font-size:22px}
-.num{font:12px "DM Mono",monospace;color:var(--red);margin-right:8px}
-.promise p{margin-left:25px;color:#39342d}
-.targets{width:100%;border-collapse:collapse;margin:14px 0 8px;font-size:15px}
-.targets th{font:11px "DM Mono",monospace;text-align:left;text-transform:uppercase;background:#ded3bd;padding:10px}
-.targets td{border-bottom:1px solid #b8ad9b;padding:10px;vertical-align:top}
-.note{font-size:13px;color:var(--muted);font-style:italic}
-.profile{display:grid;grid-template-columns:180px 1fr;gap:22px;align-items:start;border-top:1px solid var(--ink);padding-top:18px}
-.profile img{width:100%;height:220px;object-fit:cover;object-position:center 25%;filter:grayscale(1)}
-.pullquote{font:700 clamp(22px,3.5vw,34px)/1.2 "Playfair Display",serif;border-left:5px solid var(--red);padding:4px 0 4px 18px;margin:20px 0}
-.cta{background:var(--ink);color:var(--paper);padding:24px;text-align:center;margin-top:26px}
-.cta .extra{font:900 clamp(35px,7vw,68px)/1 "Playfair Display",serif;color:#e1b7a6;margin:5px}
-.cta h2{font:700 clamp(22px,4vw,36px) "Playfair Display",serif;margin:10px 0}
+
+.num{
+font:12px "DM Mono",monospace;
+color:var(--red);
+margin-right:8px;
+}
+
+.promise p{
+margin-left:25px;
+color:#39342d;
+}
+
+.targets{
+width:100%;
+border-collapse:collapse;
+margin:14px 0 8px;
+font-size:15px;
+}
+
+.targets th{
+font:11px "DM Mono",monospace;
+text-align:left;
+text-transform:uppercase;
+background:#ded3bd;
+padding:10px;
+}
+
+.targets td{
+border-bottom:1px solid #b8ad9b;
+padding:10px;
+vertical-align:top;
+}
+
+.note{
+font-size:13px;
+color:var(--muted);
+font-style:italic;
+}
+
+.profile{
+display:grid;
+grid-template-columns:180px 1fr;
+gap:22px;
+align-items:start;
+border-top:1px solid var(--ink);
+padding-top:18px;
+}
+
+.profile img{
+width:100%;
+height:220px;
+object-fit:cover;
+object-position:center 25%;
+filter:grayscale(1);
+}
+
+.pullquote{
+font:700 clamp(22px,3.5vw,34px)/1.2 "Playfair Display",serif;
+border-left:5px solid var(--red);
+padding:4px 0 4px 18px;
+margin:20px 0;
+}
+
+.cta{
+background:var(--ink);
+color:var(--paper);
+padding:24px;
+text-align:center;
+margin-top:26px;
+}
+
+.cta .extra{
+font:900 clamp(35px,7vw,68px)/1 "Playfair Display",serif;
+color:#e1b7a6;
+margin:5px;
+}
+
+.cta h2{
+font:700 clamp(22px,4vw,36px) "Playfair Display",serif;
+margin:10px 0;
+}
+
 .cta p{color:#e5dac7}
-.cta a{display:inline-block;margin-top:10px;background:var(--red);color:white;padding:12px 18px;text-decoration:none;font:12px "DM Mono",monospace;letter-spacing:.08em}
-footer{border-top:4px double var(--ink);margin-top:22px;padding-top:12px;display:flex;justify-content:space-between;gap:12px;font:10px "DM Mono",monospace;text-transform:uppercase;letter-spacing:.06em}
+
+.cta a{
+display:inline-block;
+margin-top:10px;
+background:var(--red);
+color:white;
+padding:12px 18px;
+text-decoration:none;
+font:12px "DM Mono",monospace;
+letter-spacing:.08em;
+}
+
+footer{
+border-top:4px double var(--ink);
+margin-top:22px;
+padding-top:12px;
+display:flex;
+justify-content:space-between;
+gap:12px;
+font:10px "DM Mono",monospace;
+text-transform:uppercase;
+letter-spacing:.06em;
+}
 
 @media(max-width:720px){
-.page{width:100%;margin:0;padding:18px}
-.hero{grid-template-columns:1fr;gap:18px}
+
+.page{
+width:100%;
+margin:0;
+padding:18px;
+}
+
+.hero{
+grid-template-columns:1fr;
+gap:18px;
+}
+
 .hero-copy{order:1}
-.portrait-wrap{order:0;width:52%;min-width:170px}
+
+.portrait-wrap{
+order:0;
+width:52%;
+min-width:170px;
+}
+
 .portrait-wrap img{height:220px}
-.columns{grid-template-columns:1fr;gap:0}
-.column,.column:last-child{border-right:0;border-bottom:1px solid var(--line);padding:12px 0}
+
+.columns{
+grid-template-columns:1fr;
+gap:0;
+}
+
+.column,.column:last-child{
+border-right:0;
+border-bottom:1px solid var(--line);
+padding:12px 0;
+}
+
 .column:last-child{border:0}
+
 .promise-grid{grid-template-columns:1fr}
-.profile{grid-template-columns:112px 1fr;gap:14px}
+
+.profile{
+grid-template-columns:112px 1fr;
+gap:14px;
+}
+
 .profile img{height:160px}
+
 .rule-title h2{white-space:normal}
+
 footer{flex-direction:column}
 }
+
 @media print{
 body{background:white}
 .page{width:100%;margin:0;box-shadow:none}
@@ -95,188 +428,211 @@ nav a{color:var(--ink)}
 <main class="page">
 
 <header>
-  <div class="topline">
-    <span>Independent student edition</span>
-    <span>SIUD • Election 2026–27</span>
-    <span>Vol. 01 / No. 011</span>
-  </div>
 
-  <div class="masthead">
-    <h1>THE SIUD DAILY</h1>
-    <div class="tagline">The Student Voice. The Student Choice.</div>
-    <div class="edition">ELECTION SPECIAL &nbsp;•&nbsp; 2026—2027</div>
-  </div>
+<div class="topline">
+<span>Independent student edition</span>
+<span>SIUD • Election 2026–27</span>
+<span>Vol. 01 / No. 011</span>
+</div>
 
-  <nav aria-label="Main navigation">
-    <a href="#front">Front Page</a>
-    <a href="#ashika">Meet Ashika</a>
-    <a href="#manifesto">The Manifesto</a>
-    <a href="#voice">Student Voice</a>
-    <a href="#targets">The Plan</a>
-  </nav>
+<div class="masthead">
+<h1>THE SIUD DAILY</h1>
+<div class="tagline">The Student Voice. The Student Choice.</div>
+<div class="edition">ELECTION SPECIAL • 2026—2027</div>
+</div>
+
+<nav aria-label="Main navigation">
+<a href="#front">Front Page</a>
+<a href="#ashika">Meet Ashika</a>
+<a href="#manifesto">The Manifesto</a>
+<a href="#voice">Student Voice</a>
+<a href="#targets">The Plan</a>
+</nav>
+
 </header>
 
 <section id="front" class="content">
-  <div class="breaking">
-    <b>EXTRA! EXTRA!</b>
-    <span>THE STUDENT EDITION • A NEW VOICE FOR THE NEXT CHAPTER</span>
-  </div>
 
-  <div class="hero">
-    <div class="hero-copy">
-      <div class="byline">The headline story • Candidate for Student Council President</div>
-      <h2>STUDENT VOICES ARE <em>MAKING HEADLINES!</em></h2>
-      <p class="dek">Meet Ashika Raj — standing for a student council that listens, represents and acts. Because university life should be shaped with students, not just around them.</p>
-      <p class="smallcaps">YOUR VOICE. YOUR IDEAS. OUR UNIVERSITY.</p>
-    </div>
+<div class="breaking">
+<b>EXTRA! EXTRA!</b>
+<span>THE STUDENT EDITION • A NEW VOICE FOR THE NEXT CHAPTER</span>
+</div>
 
-    <figure class="portrait-wrap">
-      <img src="ashika-portrait.jpeg" alt="Portrait of candidate Ashika Raj">
-      <figcaption class="photo-caption">Ashika Raj • Student Council President Candidate</figcaption>
-    </figure>
-  </div>
+<div class="hero">
 
-  <div class="columns">
-    <article class="column">
-      <div class="smallcaps">Campus matters</div>
-      <h3>Every voice deserves a platform.</h3>
-      <p>From academics and transport to campus facilities, events and student welfare, student concerns should be heard and taken seriously.</p>
-    </article>
+<div class="hero-copy">
+<div class="byline">The headline story • Candidate for Student Council President</div>
+<h2>STUDENT VOICES ARE <em>MAKING HEADLINES!</em></h2>
+<p class="dek">Meet Ashika Raj — standing for a student council that listens, represents and acts. Because university life should be shaped with students, not just around them.</p>
+<p class="smallcaps">YOUR VOICE. YOUR IDEAS. OUR UNIVERSITY.</p>
+</div>
 
-    <article class="column">
-      <div class="smallcaps">The big idea</div>
-      <h3>A council that works alongside you.</h3>
-      <p>Leadership is more than holding a position. It means listening, communicating clearly and working together to improve student life.</p>
-    </article>
+<figure class="portrait-wrap">
+<img src="ashika-portrait.jpeg" alt="Portrait of candidate Ashika Raj">
+<figcaption class="photo-caption">Ashika Raj • Student Council President Candidate</figcaption>
+</figure>
 
-    <article class="column">
-      <div class="smallcaps">Coming into focus</div>
-      <h3>More connection. More participation.</h3>
-      <p>Explore opportunities for outings, workshops, student-led events and stronger student–faculty interaction.</p>
-    </article>
-  </div>
+</div>
+
+<div class="columns">
+
+<article class="column">
+<div class="smallcaps">Campus matters</div>
+<h3>Every voice deserves a platform.</h3>
+<p>From academics and transport to campus facilities, events and student welfare, student concerns should be heard and taken seriously.</p>
+</article>
+
+<article class="column">
+<div class="smallcaps">The big idea</div>
+<h3>A council that works alongside you.</h3>
+<p>Leadership is more than holding a position. It means listening, communicating clearly and working together to improve student life.</p>
+</article>
+
+<article class="column">
+<div class="smallcaps">Coming into focus</div>
+<h3>More connection. More participation.</h3>
+<p>Explore opportunities for outings, workshops, student-led events and stronger student–faculty interaction.</p>
+</article>
+
+</div>
 </section>
 
 <section id="ashika" class="content">
-  <div class="rule-title">
-    <h2>MEET THE CANDIDATE</h2>
-  </div>
 
-  <div class="profile">
-    <img src="ashika-portrait.jpeg" alt="Ashika Raj">
+<div class="rule-title">
+<h2>MEET THE CANDIDATE</h2>
+</div>
 
-    <div>
-      <div class="smallcaps">A little about Ashika</div>
-      <h3>Not here to stand above you. Here to stand with you.</h3>
-      <p>My experiences have helped me build skills in leadership, communication, teamwork, coordination and creativity. I've been Head of MediaGenix (Videographics and Cinematography), worked on Meta Marketing and Social Media through Coursera, served as Sports Assistant Class Representative, helped organise inter-school events, volunteered in the health service, coordinated school events and represented my school in academics, debates and discussion panels.</p>
-    </div>
-  </div>
+<div class="profile">
 
-  <blockquote class="pullquote">“I don't want to be some President who just stands in your place. I want to be the President you can count on.”</blockquote>
+<img src="ashika-portrait.jpeg" alt="Ashika Raj">
+
+<div>
+<div class="smallcaps">A little about Ashika</div>
+<h3>Not here to stand above you. Here to stand with you.</h3>
+<p>My experiences have helped me build skills in leadership, communication, teamwork, coordination and creativity. I've been Head of MediaGenix (Videographics and Cinematography), worked on Meta Marketing and Social Media through Coursera, served as Sports Assistant Class Representative, helped organise inter-school events, volunteered in the health service, coordinated school events and represented my school in academics, debates and discussion panels.</p>
+</div>
+
+</div>
+
+<blockquote class="pullquote">“I don't want to be some President who just stands in your place. I want to be the President you can count on.”</blockquote>
+
 </section>
 
 <section id="manifesto" class="content">
-  <div class="rule-title">
-    <h2>THE MANIFESTO</h2>
-  </div>
 
-  <p class="intro">A more connected, engaging and student-focused campus — with student ideas at the heart of what we do.</p>
+<div class="rule-title">
+<h2>THE MANIFESTO</h2>
+</div>
 
-  <div class="promise-grid">
-    <article class="promise">
-      <h3><span class="num">01</span>The Student Voice Initiative</h3>
-      <p>Propose an anonymous feedback form for concerns and suggestions on academics, transport, facilities, events and welfare. Prioritise issues, raise them with the relevant departments and share regular progress updates.</p>
-    </article>
+<p class="intro">A more connected, engaging and student-focused campus — with student ideas at the heart of what we do.</p>
 
-    <article class="promise">
-      <h3><span class="num">02</span>Getting There, Together</h3>
-      <p>Explore a shuttle between DIC Metro Station and the University by surveying demand and assessing preferred timings, safety, feasibility, providers, costs and approval requirements.</p>
-    </article>
+<div class="promise-grid">
 
-    <article class="promise">
-      <h3><span class="num">03</span>A Better Start?</h3>
-      <p>Gather student feedback and discuss the current 8:15 AM class start with Faculty and Admin, including possible 8:30, 8:45 or 9:00 starts, while considering timetable and operational constraints.</p>
-    </article>
+<article class="promise">
+<h3><span class="num">01</span>The Student Voice Initiative</h3>
+<p>Propose an anonymous feedback form for concerns and suggestions on academics, transport, facilities, events and welfare. Prioritise issues, raise them with the relevant departments and share regular progress updates.</p>
+</article>
 
-    <article class="promise">
-      <h3><span class="num">04</span>Beyond the Classroom</h3>
-      <p>Poll students on destinations and activities, explore affordable options and work towards at least one major educational or recreational outing, subject to feasibility and approval.</p>
-    </article>
+<article class="promise">
+<h3><span class="num">02</span>Getting There, Together</h3>
+<p>Explore a shuttle between DIC Metro Station and the University by surveying demand and assessing preferred timings, safety, feasibility, providers, costs and approval requirements.</p>
+</article>
 
-    <article class="promise">
-      <h3><span class="num">05</span>SIUD UNPLUGGED</h3>
-      <p>Propose an annual student-led campus fest with games, competitions, music, dance, open mic, karaoke, talent shows, student-run stalls, art exhibitions and a photobooth.</p>
-    </article>
+<article class="promise">
+<h3><span class="num">03</span>A Better Start?</h3>
+<p>Gather student feedback and discuss the current 8:15 AM class start with Faculty and Admin, including possible 8:30, 8:45 or 9:00 starts, while considering timetable and operational constraints.</p>
+</article>
 
-    <article class="promise">
-      <h3><span class="num">06</span>More Ways to Get Involved</h3>
-      <p>Encourage interactive sessions, informal get-togethers, skill-development workshops, opportunities to discover student talent and initiatives supporting wellbeing and participation.</p>
-    </article>
+<article class="promise">
+<h3><span class="num">04</span>Beyond the Classroom</h3>
+<p>Poll students on destinations and activities, explore affordable options and work towards at least one major educational or recreational outing, subject to feasibility and approval.</p>
+</article>
 
-    <article class="promise">
-      <h3><span class="num">07</span>Stronger Student–Faculty Connections</h3>
-      <p>Encourage discussion groups, interactive sessions, academic workshops and guest sessions, while respectfully communicating student concerns to the right people.</p>
-    </article>
+<article class="promise">
+<h3><span class="num">05</span>SIUD UNPLUGGED</h3>
+<p>Propose an annual student-led campus fest with games, competitions, music, dance, open mic, karaoke, talent shows, student-run stalls, art exhibitions and a photobooth.</p>
+</article>
 
-    <article class="promise">
-      <h3><span class="num">08</span>A Council That Works as a Team</h3>
-      <p>Build clear responsibilities, regular meetings, committee coordination, realistic deadlines, accountability, open communication and collective leadership.</p>
-    </article>
-  </div>
+<article class="promise">
+<h3><span class="num">06</span>More Ways to Get Involved</h3>
+<p>Encourage interactive sessions, informal get-togethers, skill-development workshops, opportunities to discover student talent and initiatives supporting wellbeing and participation.</p>
+</article>
+
+<article class="promise">
+<h3><span class="num">07</span>Stronger Student–Faculty Connections</h3>
+<p>Encourage discussion groups, interactive sessions, academic workshops and guest sessions, while respectfully communicating student concerns to the right people.</p>
+</article>
+
+<article class="promise">
+<h3><span class="num">08</span>A Council That Works as a Team</h3>
+<p>Build clear responsibilities, regular meetings, committee coordination, realistic deadlines, accountability, open communication and collective leadership.</p>
+</article>
+
+</div>
 </section>
 
 <section id="targets" class="content">
-  <div class="rule-title">
-    <h2>THE PLAN, IN PRINT</h2>
-  </div>
 
-  <p>These are the proposed targets I would work towards during the academic year:</p>
+<div class="rule-title">
+<h2>THE PLAN, IN PRINT</h2>
+</div>
 
-  <table class="targets">
-    <thead>
-      <tr>
-        <th>Area</th>
-        <th>Proposed target</th>
-      </tr>
-    </thead>
+<p>These are the proposed targets I would work towards during the academic year:</p>
 
-    <tbody>
-      <tr><td>Student feedback</td><td>At least one student feedback survey every month.</td></tr>
-      <tr><td>Transportation</td><td>Conduct a DIC shuttle demand survey and submit a possible practical proposal.</td></tr>
-      <tr><td>Class timings</td><td>Gather student opinions and present recommendations regarding the 8:15 AM start.</td></tr>
-      <tr><td>Student outings</td><td>Work towards organising at least one major student outing.</td></tr>
-      <tr><td>Annual fest</td><td>Develop and present a proposal for SIUD UNPLUGGED.</td></tr>
-      <tr><td>Campus engagement</td><td>At least one interactive student activity every month.</td></tr>
-      <tr><td>Skill development</td><td>Work towards at least two workshops during the academic year.</td></tr>
-      <tr><td>Faculty &amp; student interaction</td><td>Aim for two interaction sessions per semester.</td></tr>
-      <tr><td>Student welfare</td><td>Work towards at least two welfare initiatives per semester.</td></tr>
-      <tr><td>Council management</td><td>At least two structured council meetings per month.</td></tr>
-      <tr><td>Accountability</td><td>Review progress and communicate updates regularly.</td></tr>
-    </tbody>
-  </table>
+<table class="targets">
 
-  <p class="note">All targets and initiatives are proposals, subject to University approval, available resources, scheduling and operational feasibility. They are goals to work towards, not guarantees of approval or implementation.</p>
+<thead>
+<tr>
+<th>Area</th>
+<th>Proposed target</th>
+</tr>
+</thead>
+
+<tbody>
+<tr><td>Student feedback</td><td>At least one student feedback survey every month.</td></tr>
+<tr><td>Transportation</td><td>Conduct a DIC shuttle demand survey and submit a possible practical proposal.</td></tr>
+<tr><td>Class timings</td><td>Gather student opinions and present recommendations regarding the 8:15 AM start.</td></tr>
+<tr><td>Student outings</td><td>Work towards organising at least one major student outing.</td></tr>
+<tr><td>Annual fest</td><td>Develop and present a proposal for SIUD UNPLUGGED.</td></tr>
+<tr><td>Campus engagement</td><td>At least one interactive student activity every month.</td></tr>
+<tr><td>Skill development</td><td>Work towards at least two workshops during the academic year.</td></tr>
+<tr><td>Faculty &amp; student interaction</td><td>Aim for two interaction sessions per semester.</td></tr>
+<tr><td>Student welfare</td><td>Work towards at least two welfare initiatives per semester.</td></tr>
+<tr><td>Council management</td><td>At least two structured council meetings per month.</td></tr>
+<tr><td>Accountability</td><td>Review progress and communicate updates regularly.</td></tr>
+</tbody>
+
+</table>
+
+<p class="note">All targets and initiatives are proposals, subject to University approval, available resources, scheduling and operational feasibility. They are goals to work towards, not guarantees of approval or implementation.</p>
+
 </section>
 
 <section id="voice" class="content">
-  <div class="cta">
-    <div class="smallcaps" style="color:#e7b8a7">A message to every student</div>
-    <div class="extra">YOUR VOICE MATTERS.</div>
-    <h2>A presidency that listens, represents and acts.</h2>
-    <p>“I can't guarantee that every request will be fulfilled, but I can guarantee that every voice will be heard, every concern will be taken seriously and that every possible effort will be made.”</p>
-    <p><strong>YOUR VOICE. YOUR IDEAS. OUR UNIVERSITY.</strong></p>
-  </div>
 
-  <p class="note" style="text-align:center;margin-top:14px">Want to share a thought? A secure anonymous suggestion form can be linked here once its submission destination is set up.</p>
+<div class="cta">
+
+<div class="smallcaps" style="color:#e7b8a7">A message to every student</div>
+<div class="extra">YOUR VOICE MATTERS.</div>
+<h2>A presidency that listens, represents and acts.</h2>
+
+<p>“I can't guarantee that every request will be fulfilled, but I can guarantee that every voice will be heard, every concern will be taken seriously and that every possible effort will be made.”</p>
+
+<p><strong>YOUR VOICE. YOUR IDEAS. OUR UNIVERSITY.</strong></p>
+
+</div>
+
+<p class="note" style="text-align:center;margin-top:14px">Want to share a thought? A secure anonymous suggestion form can be linked here once its submission destination is set up.</p>
+
 </section>
 
 <footer>
-  <span>The SIUD Daily • Election Special 2026–27</span>
-  <span>Prepared by the Ashika Raj campaign</span>
-  <span>Listen. Represent. Act.</span>
+<span>The SIUD Daily • Election Special 2026–27</span>
+<span>Prepared by the Ashika Raj campaign</span>
+<span>Listen. Represent. Act.</span>
 </footer>
 
 </main>
 </body>
 </html>
-
